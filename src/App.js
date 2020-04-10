@@ -8,7 +8,7 @@ class App extends Component {
   state = {
       nums: [],
       name: [],
-      price: [],
+      date: [],
       OTP: []
   }
 
@@ -26,6 +26,14 @@ class App extends Component {
     name.push(e.target.value)
     this.setState({
       name
+    })
+  }
+
+  edithDate = (e) => {
+    const date = []
+    date.push(e.target.value)
+    this.setState({
+      date
     })
   }
  
@@ -79,6 +87,17 @@ class App extends Component {
                 })
               }
             </div>
+
+            <div className="date">
+              <span>date</span>
+              {
+                this.state.date.map(e=>{
+                  return <Fade top duration={5000}>
+                          <p>{e}</p>
+                    </Fade>
+                })
+              }
+            </div>
             
             <img className="logo" src={require('./img/master.png')}/>
 
@@ -112,8 +131,8 @@ class App extends Component {
         <div className="form">
           <input onChange={this.edithNum} onFocus={()=>this.rotate('front')} type="number" placeholder="Card number"/>
           <input onChange={this.edithName} onFocus={()=>this.rotate('front')} placeholder="Enter name"/>
-          <input onChange={this.edithDate} onFocus={()=>this.rotate('front')} type="date"/>
-          <input onChange={this.edithOTP} onFocus={()=>this.rotate('back')} placeholder="OTP" className="otp" type="number"/>
+          <input onChange={this.edithDate} style={{width: '5rem'}} onFocus={()=>this.rotate('front')} type="date"/>
+          <input onChange={this.edithOTP} onFocus={()=>this.rotate('back')} placeholder="CVV" className="otp" type="number"/>
         </div>
       </div>
     );
