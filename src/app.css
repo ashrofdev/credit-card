@@ -73,6 +73,7 @@
     color: white;
     border: .1px solid rgba(255, 255, 255, 0.055);
     padding: .1rem .8rem;
+    text-transform: uppercase;
 }
 .name span {
     font-size: .8rem;
@@ -99,6 +100,32 @@
 
 .back {
     transform: rotateY(180deg);
+}
+.back .black {
+    background-color: black;
+    height: 2rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+.back .cvv {
+    width: 90%;
+    text-align: right;
+    outline: none;
+    border-radius: .2rem;
+    border: none;
+    background-color: white;
+    height: 2rem;
+    margin: auto;
+}
+.back .cvv_child {
+    width: 90%;
+    text-align: right;
+    outline: none;
+    border-radius: .2rem;
+    border: none;
+    height: 2rem;
+    margin: auto;
+    padding-top: .5rem;
 }
 
 
