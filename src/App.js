@@ -44,6 +44,18 @@ class App extends Component {
       OTP
     })
   }
+
+  rotate = (position) => {
+    if (position==='back') {
+      document.querySelector('.front').style='transform: rotateY(-180deg)'
+      document.querySelector('.back').style='transform: rotateY(0)'
+    } else if (position==='front') {
+      document.querySelector('.front').style='transform: rotateY(0)'
+      document.querySelector('.back').style='transform: rotateY(180deg)'
+    }
+  }
+
+
   render() {
     
     return (
@@ -85,10 +97,10 @@ class App extends Component {
           </div>
         </div>
         <div className="form">
-          <input onChange={this.edithNum} type="number" placeholder="Card number"/>
-          <input onChange={this.edithName} placeholder="Enter name"/>
-          <input onChange={this.edithPrice} placeholder="Enter price" type="number"/>
-          <input onChange={this.edithOTP} placeholder="OTP" type="number"/>
+          <input onChange={this.edithNum} onFocus={()=>this.rotate('front')} type="number" placeholder="Card number"/>
+          <input onChange={this.edithName} onFocus={()=>this.rotate('front')} placeholder="Enter name"/>
+          <input onChange={this.edithPrice} onFocus={()=>this.rotate('front')} placeholder="Enter price" type="number"/>
+          <input onChange={this.edithOTP} onFocus={()=>this.rotate('back')} placeholder="OTP" className="otp" type="number"/>
         </div>
       </div>
     );

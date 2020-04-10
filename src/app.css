@@ -8,19 +8,22 @@
 .card {
     padding: 2rem;
     position: relative;
-    width: 25rem;
-    height: 10rem;
+    width: 20rem;
+    height: 12rem;
     margin: auto;
+    perspective: 50rem;
 }
 
 .card .side {
     height: 12rem;
     background-image: linear-gradient(to right bottom, rgb(255, 174, 0) 40%, rgb(255, 81, 0));
-    width: 25rem;
+    width: 20rem;
     margin: auto;
     border-radius: 1rem;
     position: absolute;
     box-shadow: 1px 1px .5rem rgba(0, 0, 0, 0.726);
+    backface-visibility: hidden;
+    transition: all 1s;
 }
 .front {
     position: relative;
@@ -95,18 +98,31 @@
 /* /////////////// Styling back side //////////////// */
 
 .back {
+    transform: rotateY(180deg);
 }
+
+
+/* //////////////////// styling hover efect ////////////////////////////////////// */
+
+
+.otp:focus .front {
+    transform: rotateY(-180deg);
+}
+.otp:focus .back {
+    transform: rotateY(0);
+}
+
 
 /* /////////////////////// Styling form //////////////////////// */
 
 .form {
-    width: 35rem;
+    width: 30rem;
     margin: auto;
     border: 1px solid orange;
     border-radius: 1rem;
     padding: 2rem;
     padding-top: 10rem;
-    margin-top: -7rem;
+    margin-top: -10rem;
     display: grid;
     grid-template-columns: repeat(2, 15rem);
     justify-content: center;
