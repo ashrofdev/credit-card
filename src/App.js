@@ -49,35 +49,40 @@ class App extends Component {
     return (
       <div className="App">
         <div className="card">
-          <img className="chip" src={require('./img/chip.png')}/>
-          <div className="card_num">
-            {
-              this.state.nums.map((e,i)=>{
-                return <p>{e}</p>
-              })
-            }
+          <div className="side front">
+            <img className="chip" src={require('./img/chip.png')}/>
+            <div className="card_num">
+              {
+                this.state.nums.map((e,i)=>{
+                  return <p>{e}</p>
+                })
+              }
+            </div>
+            <div className="name">
+              <span>Name</span>
+              {
+                this.state.name.map(e=>{
+                  return <Fade top duration={5000}>
+                          <p>{e}</p>
+                    </Fade>
+                })
+              }
+            </div>
+            
+            <img className="logo" src={require('./img/master.png')}/>
           </div>
-          <div className="name">
-            <span>Name</span>
-            {
-              this.state.name.map(e=>{
-                return <Fade top duration={5000}>
-                        <p>{e}</p>
-                  </Fade>
-              })
-            }
+          <div className="side back">
+            <div className="OTP">
+              <span>OTP</span>
+              {
+                this.state.OTP.map(e=>{
+                  return <Fade top duration={5000}>
+                          <p>{e}</p>
+                    </Fade>
+                })
+              }
+            </div>
           </div>
-          <div className="OTP">
-            <span>OTP</span>
-            {
-              this.state.OTP.map(e=>{
-                return <Fade top duration={5000}>
-                        <p>{e}</p>
-                  </Fade>
-              })
-            }
-          </div>
-          <img className="logo" src={require('./img/master.png')}/>
         </div>
         <div className="form">
           <input onChange={this.edithNum} type="number" placeholder="Card number"/>
