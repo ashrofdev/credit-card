@@ -1,0 +1,96 @@
+.App {
+    width: 50rem;
+    margin: auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.card {
+    width: 25rem;
+    height: 10rem;
+    background-image: linear-gradient(to right bottom, rgb(255, 174, 0) 40%, rgb(255, 81, 0));
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: auto;
+    position: relative;
+}
+.chip {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+}
+
+.card_num {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+@keyframes numb {
+    0%{
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.card_num p {
+    animation: numb 1s;
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+}
+
+.card .name {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    text-align: left;
+    color: white;
+    border: .1px solid rgba(255, 255, 255, 0.055);
+    padding: .1rem .8rem;
+}
+.name span {
+    font-size: .8rem;
+    font-style: italic;
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+}
+.name p {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 5rem;
+}
+
+
+/* /////////////////////// Styling form //////////////////////// */
+
+.form {
+    width: 35rem;
+    margin: auto;
+    border: 1px solid orange;
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-top: 15rem;
+    margin-top: -10rem;
+    display: grid;
+    grid-template-columns: repeat(2, 15rem);
+    justify-content: center;
+    grid-gap: 2rem;
+}
+.form input {
+    padding: .5rem;
+    outline: none;
+}
